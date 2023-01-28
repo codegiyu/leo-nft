@@ -1,0 +1,112 @@
+@use "./style.scss";
+
+.footer {
+    width: 100%;
+    background: transparent;
+    padding: 0 100px;
+    font-family: style.$ff-della;
+    font-size: 28px;
+    line-height: 38px;
+    font-weight: 500;
+    color: style.$bg-light;
+
+    & .footer-top {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 28px 0;
+
+        & .footer-socials-wrap {
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 36px;
+
+            & .media-wrap {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 48px;
+    
+                & .media-icon {
+                    height: 52px;
+                }
+            }
+        }
+
+        & .bottom-links {
+            display: flex;
+            width: max-content;
+
+            & ul {
+                display: flex;
+                align-items: center;
+                gap: 40px;
+                list-style: none;
+
+                & a {
+                    text-decoration: none;
+                    color: style.$bg-light;
+
+                    & li {
+                        width: max-content;
+
+                        &:hover, &:focus {
+                            color: style.$bg-mint;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    & .footer-wrap {
+        width: 100%;
+        padding: 28px 0;
+        border-top: 1px solid style.$bg-grey;
+        display: flex;
+        justify-content: center;
+
+        & .footer-text {
+            width: max-content;
+        }
+    }
+
+    @include style.devices(mobile) {
+        padding: 0 20px;
+        font-size: 16px;
+        line-height: 22px;
+
+        & .footer-top {
+            flex-direction: column;
+            gap: 20px;
+
+            & .footer-socials-wrap {
+                align-items: center;
+                gap: 10px;
+                margin: 0 auto;
+
+                & .media-wrap {
+                    gap: 16px;
+        
+                    & .media-icon {
+                        height: 26px;
+                    }
+                }
+            }
+
+            & .bottom-links {
+                width: 100%;
+    
+                & ul {
+                    width: 100%;
+                    justify-content: space-between;
+                    gap: 0px;
+                }
+            }
+        }
+    }
+}

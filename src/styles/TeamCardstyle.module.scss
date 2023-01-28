@@ -1,0 +1,66 @@
+@use "./style.scss";
+
+.team-card {
+    width: 100%;
+    margin-bottom: 24px;
+
+    & .img-container {
+        width: 100%;
+        aspect-ratio: 0.942;
+        background: #D4CDC7;
+        border: 2px solid style.$bg-grey;
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: flex-end;
+        overflow: hidden;
+        margin-bottom: 16px;
+
+        & .ellipse {
+            height: 72.73%;
+            aspect-ratio: 0.8;
+            border-radius: 50%;
+            position: absolute;
+            bottom: 0;
+            right: -40%;
+            background: #9FA670;
+        }
+
+        & img {
+            z-index: 2;
+        }
+    }
+
+    & .captions-container {
+        width: 100%;
+        background: transparent;
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+        align-items: center;
+        font-weight: 500;
+
+        & .name {
+            font-size: 32px;
+            line-height: 44px;
+        }
+
+        & .division {
+            font-size: 24px;
+            line-height: 33px;
+        }
+
+        @include style.devices(mobile) {
+
+            & .name {
+                font-size: 20px;
+                line-height: 27px;
+            }
+    
+            & .division {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
+}

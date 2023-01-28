@@ -1,0 +1,41 @@
+@use "./style.scss";
+
+.sample-box {
+    width: 100%;
+    aspect-ratio: 0.8;
+    background: linear-gradient(180deg, #97FBD4 0%, #BACAC4 19.8%, #60C3AE 100%);
+    display: flex;
+    align-items: flex-end;
+    position: relative;
+
+    & .triangle {
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        overflow: hidden;
+
+        & img {
+            width: 100%;
+            aspect-ratio: 0.7464;
+            
+        }
+    }
+
+    & .leopard {
+        width: 100%;
+        aspect-ratio: 0.9393;
+        z-index: 2;
+    }
+
+    & .solana {
+        width: 120px;
+        aspect-ratio: 1;
+        position: absolute;
+        top: -60px;
+        right: -60px;
+    }
+}

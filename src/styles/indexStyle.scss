@@ -1,0 +1,309 @@
+@use "./style.scss";
+
+.page-body {
+    width: 100vw;
+    min-height: 100vh;
+    background: style.$bg-dark;
+    color: style.$bg-light;
+    font-family: style.$ff-della;
+    overflow: hidden;
+    z-index: -2;
+
+    & main {
+        width: 100%;
+        padding: 100px 0 0;
+    }
+}
+
+#about {
+    width: 100%;
+    background: transparent;
+    z-index: -2;
+    padding: 50px 100px 70px;
+
+    & h1, h2 {
+        font-weight: 500;
+        font-size: 60px;
+        line-height: 80px;
+        text-transform: uppercase;
+        z-index: 2;
+    }
+
+    & .page-title {
+        width: max-content;
+        position: relative;
+        padding-left: 35px;
+        margin: 0;
+
+        & img {
+           width: 275px;
+           aspect-ratio: 1; 
+           position: absolute;
+           top: -65px;
+           left: -85px;
+           z-index: 1;
+           opacity: 0.8;
+        }
+    }
+
+    & .about-title {
+        width: max-content;
+        position: relative;
+        margin: 0 0 60px auto;
+        padding-right: 40px;
+
+        & h2 {
+            color: style.$bg-mint;
+        }
+
+        & .about-star {
+           width: 60px;
+           aspect-ratio: 1; 
+           position: absolute;
+           top: -40px;
+           right: 250px;
+        }
+
+        & .about-atom {
+           width: 275px;
+           aspect-ratio: 1; 
+           position: absolute;
+           top: -100px;
+           right: -85px;
+           z-index: 1;
+           opacity: 0.8;
+        }
+    }
+
+    & .about-content {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        position: relative;
+        z-index: 0;
+
+        & .leo-text {
+            width: max-content;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-weight: 500;
+            font-size: 180px;
+            line-height: 80%;
+            color: style.$bg-scroll;
+            z-index: -1;
+        }
+
+        & .about-content-left {
+            width: 540px;
+
+            & .about-arrow {
+                width: 50px;
+                aspect-ratio: 1;
+                margin-bottom: 40px;
+            }
+
+            & table {
+                width: 100%;
+                border-collapse: collapse;
+                z-index: 2;
+
+                & tr {
+                    border-top: 0.5px solid style.$bg-grey;
+                    border-bottom: 0.5px solid style.$bg-grey;
+                    font-weight: 500;
+                    font-size: 32px;
+                    line-height: 44px;
+                    z-index: 2;
+
+                    & .col-1 {
+                        width: 45px;
+                        color: style.$bg-mint;
+                        padding: 20px 0;
+                    }
+
+                    & .col-2 {
+                        width: calc(100% - 45px);
+                        padding: 20px 0;
+                    }
+                }
+            }
+        }
+
+        & .leonft-desktop {
+            width: 120px;
+            aspect-ratio: 1;
+            display: block;
+            z-index: 1;
+        }
+
+        & .about-content-right {
+            width: 383px;
+            aspect-ratio: 0.8;
+
+            & .leonft-mobile {
+                display: none;
+                z-index: 1;
+            }
+
+            & .nft-box {
+                width: 100%;
+            }
+        }
+    }
+
+    @include style.devices(mobile) {
+        padding: 28px 20px;
+         
+        & h1, h2 {
+            font-size: 22px;
+            line-height: 33px;
+        }
+
+        & .page-title {
+            padding-left: 10px;
+            margin: 0 0 13px;
+    
+            & img {
+               width: 100px;
+               top: -22px;
+               left: -33px;
+            }
+        }
+    
+        & .about-title {
+            margin: 0 0 32px auto;
+            padding-right: 10px;
+    
+            & .about-star {
+               width: 30px;
+               top: -21px;
+               right: 83px;
+            }
+    
+            & .about-atom {
+               width: 100px;
+               top: -35px;
+               right: -35px;
+            }
+        }
+
+        & .about-content {
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: flex-start;
+            padding-bottom: 28px;
+
+            & .leo-text {
+                font-size: 60px;
+            }
+
+            & .about-content-left {
+                width: 100%;
+
+                & .about-arrow {
+                    width: 28px;
+                    margin-bottom: 24px;
+                }
+
+                & table tr {
+                    font-size: 20px;
+                    line-height: 27px;
+
+                    & .col-1 {
+                        width: 32px;
+                        padding: 16px 0;
+                    }
+
+                    & .col-2 {
+                        width: calc(100% - 32px);
+                        padding: 16px 0;
+                    }
+                }
+            }
+
+            & .leonft-desktop {
+                display: none;
+            }
+
+            & .about-content-right {
+                width: 100%;
+                display: flex;
+                align-items: flex-end;
+                justify-content: space-between;
+
+                & .leonft-mobile {
+                    display: block;
+                    width: 60px;
+                }
+
+                & .nft-box {
+                    width: 240px;
+                }
+            }
+        }
+    }
+}
+
+#team {
+    width: 100%;
+    padding: 50px 100px 70px;
+
+    & .section-title {
+        width: max-content;
+        position: relative;
+        margin: 0 auto 45px;
+
+        & h2 {
+            font-weight: 500;
+            font-size: 60px;
+            line-height: 80px;
+            text-transform: uppercase;
+        }
+
+        & img {
+           width: 60px;
+           aspect-ratio: 1; 
+           position: absolute;
+           top: -40px;
+           right: 0;
+        }
+    }
+
+    & .team-cards-wrap {
+        width: 100%;
+        display: flex;
+
+        & .team-card-single {
+            width: 25%;
+        }
+    }
+
+    @include style.devices(mobile) {
+        padding: 50px 20px;
+
+        & .section-title {
+         
+            & h2 {
+                font-size: 28px;
+                line-height: 38px;
+            }
+
+            & img {
+                width: 30px;
+                position: absolute;
+                top: -20px;
+            }
+        }
+
+        & .team-cards-wrap {
+            flex-wrap: wrap;
+    
+            & .team-card-single {
+                width: 50%;
+            }
+        }
+    }
+}

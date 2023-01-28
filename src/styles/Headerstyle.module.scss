@@ -1,0 +1,221 @@
+@use "./style.scss";
+
+.header {
+    width: 100vw;
+    background: style.$bg-dark;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 0 100px;
+    font-family: style.$ff-della;
+    z-index: 10;
+    // overflow-x: hidden;
+
+    & .menu_pane {
+        width: 100vw;
+        background: style.$bg-scroll;
+        padding: 40px 50px 180px;
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 99;
+        transition: all 300ms ease;
+        transform: translateX(-100vw);
+
+        & .mobile_nav {
+            margin-bottom: 48px;
+
+            & ul {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 40px;
+                list-style: none;
+
+                & a {
+                    text-decoration: none;
+                    color: style.$bg-light;
+    
+                    & li {
+                        width: max-content;
+                        font-size: 24px;
+                        line-height: 33px;
+
+                        &:hover, &:focus {
+                            color: style.$bg-mint;
+                        }
+                    }
+                }
+            }
+        }
+
+        & .mobile_cta-button {
+            width: max-content;
+            padding: 15px 78px;
+            background: style.$bg-mint;
+            color: style.$bg-dark;
+            text-decoration: none;
+            font-size: 20px;
+            line-height: 27px;
+            font-weight: 500;
+            display: block;
+            margin: 0 auto 60px;
+
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+        }
+
+        & .media-wrap {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 48px;
+
+            & .media-icon {
+                height: 26px;
+            }
+        }
+
+        @include style.devices(md) {
+            display: block;
+        }
+    }
+
+    & .menu_pane.menu-active {
+       transform: translateX(0vw);
+    }
+
+    @include style.devices(mobile) {
+        padding: 0 20px;
+    }
+}
+
+.header-wrap {
+    width: 100%;
+    background: style.$bg-dark;
+    padding: 20px 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & .logo-link {
+        text-decoration: none;
+        color: style.$bg-light;
+    }
+
+    & .logo-wrap {
+        display: flex;
+        gap: 16px;
+        align-items: center;
+
+        & .logo {
+            aspect-ratio: 1;
+            width: 59px;
+
+            @include style.devices(mobile) {
+                width: 40px;
+            }
+        }
+
+        & .logotext {
+            font-weight: 500;
+            font-size: 28px;
+            line-height: 38px;
+
+            @include style.devices(mobile) {
+                font-size: 16px;
+                line-height: 22px;
+            }
+        }
+    }
+
+    & .nav-wrap {
+        display: flex;
+
+        & ul {
+            display: flex;
+            align-items: center;
+            gap: 48px;
+            list-style: none;
+
+            & a {
+                text-decoration: none;
+                color: style.$bg-light;
+
+                & li {
+                    width: max-content;
+                    font-size: 24px;
+                    line-height: 33px;
+
+                    &:hover, &:focus {
+                        color: style.$bg-mint;
+                    }
+                }
+            }
+        }
+
+        @include style.devices(md) {
+            display: none;
+        }
+    }
+
+    & .header-button {
+        padding: 0;
+
+        & .cta-button {
+            padding: 8px 65px;
+            background: style.$bg-mint;
+            color: style.$bg-dark;
+            text-decoration: none;
+            font-size: 24px;
+            line-height: 33px;
+            font-weight: 500;
+            display: block;
+
+            &:hover, &:focus {
+                text-decoration: underline;
+            }
+
+            &:active {
+                transform: scale(0.95);
+            }
+
+            @include style.devices(md) {
+                display: none;
+            }
+        }
+
+        & .menu-button {
+            outline: none;
+            border: none;
+            background: transparent;
+            display: none;
+
+            & .menu-icon {
+                font-size: 25px;
+                color: style.$bg-light;
+
+                &:hover, &:focus {
+                    color: style.$bg-mint;
+                }
+            }
+
+            @include style.devices(md) {
+                display: flex;
+            }
+        }
+    }
+
+    @include style.devices(mobile) {
+        padding: 10px 0;
+    }
+}
