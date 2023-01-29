@@ -1,0 +1,50 @@
+@use "./style.scss";
+
+.row-wrap {
+    width: 100%;
+    padding: 45px 33px;
+    border-bottom: 0.5px solid style.$bg-grey;
+    display: grid;
+    grid-template-columns: 1fr 30px 410px;
+    grid-template-rows: auto;
+    gap: 20px;
+    align-items: start;
+
+    & img {
+        width: 150px;
+        aspect-ratio: 1;
+    }
+
+    & p {
+        font-weight: 500;
+        font-size: 32px;
+        line-height: 44px;
+    }
+
+    & p.phase {
+        color: style.$bg-mint;
+    }
+
+    & .second-line {
+        margin-top: 20px;
+    }
+
+    @include style.devices(mobile) {
+        padding: 45px 0;
+        grid-template-columns: 1fr 22px 150px;
+        gap: 12px;
+
+        & img {
+            width: 80px;
+        }
+
+        & p {
+            font-size: 20px;
+            line-height: 27px;
+        }
+
+        & .second-line {
+            margin-top: 12px;
+        }
+    }
+}

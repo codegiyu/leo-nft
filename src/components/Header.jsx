@@ -13,6 +13,10 @@ const Header = ({props}) => {
         setIsMenuOpen(prevState => !prevState)
     }
 
+    const closeMenu = () => {
+        setIsMenuOpen(false)
+    }
+
     return (
         <header className={headerClasses.header}>
             <div className={headerClasses.headerWrap}>
@@ -59,29 +63,29 @@ const Header = ({props}) => {
             <section className={`${headerClasses.menu_pane} ${isMenuOpen ? headerClasses.menuActive : ""}`}>
                 <nav className={headerClasses.mobile_nav}>
                     <ul>
-                        <a href="#about">
+                        <a onClick={closeMenu} href="#about">
                             <li>
                                 <p>About</p>
                             </li>
                         </a>
-                        <a href="#mint">
+                        <a onClick={closeMenu} href="#mint">
                             <li>
                                 <p>Mint</p>
                             </li>
                         </a>
-                        <a href="#roadmap">
+                        <a onClick={closeMenu} href="#roadmap">
                             <li>
                                 <p>Roadmap</p>
                             </li>
                         </a>
-                        <a href="#team">
+                        <a onClick={closeMenu} href="#team">
                             <li>
                                 <p>The Team</p>
                             </li>
                         </a>
                     </ul>
                 </nav>
-                <a href="#mint" className={headerClasses.mobile_ctaButton}>
+                <a onClick={closeMenu} href="#mint" className={headerClasses.mobile_ctaButton}>
                     <p>Mint</p>
                 </a>
                 <div className={headerClasses.mediaWrap}>

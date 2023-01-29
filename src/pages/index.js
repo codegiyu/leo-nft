@@ -4,6 +4,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import TeamCard from "../components/TeamCard";
 import NFTSample from "../components/NFTSample";
+import RoadmapRow from "../components/RoadmapRow";
 import star from "../images/star.svg";
 import presley from "../images/presley.png";
 import edward from "../images/edward.png";
@@ -13,6 +14,13 @@ import leonft from "../images/leonft.svg";
 import atom from "../images/atom.svg";
 import atomBright from "../images/atom-bright.svg";
 import arrow from "../images/down-arrow.svg";
+import phase1 from "../images/phase1.png";
+import phase2 from "../images/phase2.png";
+import phase3 from "../images/phase3.png";
+import phase4 from "../images/phase4.png";
+import phase5 from "../images/phase5.png";
+import { Link } from "gatsby";
+import { HiOutlineArrowNarrowUp } from "react-icons/hi";
 
 
 export const Head = () => {
@@ -25,6 +33,38 @@ export const Head = () => {
       <link rel="manifest" href="/site.webmanifest" />
     </>
   )
+}
+
+const phase1Props = {
+  pic: phase1, 
+  num: "01", 
+  text: "Mint 10k Leos.", 
+  text2: "Rarity Ranks of collection will be revealed."
+}
+
+const phase2Props = {
+  pic: phase2, 
+  num: "02", 
+  text: "NFT Staking.", 
+  text2: "Royalty up to 30% gets paid back."
+}
+
+const phase3Props = {
+  pic: phase3, 
+  num: "03", 
+  text: "Merch Store to be launched.",
+}
+
+const phase4Props = {
+  pic: phase4, 
+  num: "04", 
+  text: "Metaverse Gaming.",
+}
+
+const phase5Props = {
+  pic: phase5, 
+  num: "05", 
+  text: "Deflationary Collection: Every 6 months, the royalties collected will be used to buy NFTs and burn it.",
 }
 
 export default function Home() {
@@ -104,7 +144,47 @@ export default function Home() {
         </section>
 
         <section id="mint">
+          <div className="section-title">
+            <h2>Mint</h2>
+            <img src={star} alt="star" />
+          </div>
 
+          <div className="mint-content">
+            <div className="mint-left">
+              <p>
+                The Motivational Leopard is a collection of 10,000 unique digital collectibles 
+                living on the solana blockchain and comes with multiple utilities 
+                mentioned above. Royalties will be used to buy NFTs and burn it 
+                from collection which makes it Scary & Deflationary.
+              </p>
+              <div className="button-line">
+                <button>Mint</button>
+              </div>
+            </div>
+
+            <div className="mint-right">
+              <NFTSample props={{pic: true}} />
+            </div>
+
+            <div className="button-line mobile">
+              <button>Mint</button>
+            </div>
+          </div>
+        </section>
+
+        <section id="roadmap">
+          <div className="section-title">
+            <h2>Roadmap</h2>
+            <img src={star} alt="star" />
+          </div>
+
+          <div className="roadmap-content">
+            <RoadmapRow props={phase1Props} />
+            <RoadmapRow props={phase2Props} />
+            <RoadmapRow props={phase3Props} />
+            <RoadmapRow props={phase4Props} />
+            <RoadmapRow props={phase5Props} />
+          </div>
         </section>
 
         <section id="team">
@@ -114,7 +194,7 @@ export default function Home() {
           </div>
           <div className="team-cards-wrap">
             <div className="team-card-single">
-              <TeamCard props={{name: "Presley", division: "UI/UX Design", image: presley}} />
+              <TeamCard props={{name: "Presley", division: "UI/UX Designer", image: presley}} />
             </div>
             <div className="team-card-single">
               <TeamCard props={{name: "Edward", division: "Frontend Developer", image: edward, height: "95%"}} />
@@ -127,6 +207,11 @@ export default function Home() {
             </div>
           </div>
         </section>
+        <Link to="#about">
+          <div className="back-to-top">
+            <HiOutlineArrowNarrowUp className="back-to-top-icon" />
+          </div>
+        </Link>
       </main>
 
       <Footer />
