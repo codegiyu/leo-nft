@@ -70,8 +70,8 @@ export default function Home() {
     let [isMenuOpen, setIsMenuOpen] = React.useState(false);
     let [btbtnIsVisible, setBtbtnIsVisible] = useState(false);
     let [windowSize, setWindowSize] = useState({
-        width: window.innerWidth,
-        height: window.innerHeight,
+        width: 0,
+        height: 0,
     });
     let [sectionPositions, setSectionPositions] = useState({
         about: 0,
