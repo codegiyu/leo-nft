@@ -8,7 +8,7 @@
     left: 0;
     padding: 0 100px;
     font-family: style.$ff-della;
-    z-index: 10;
+    z-index: 30;
     // overflow-x: hidden;
 
     & .menu_pane {
@@ -37,16 +37,21 @@
                 & a {
                     text-decoration: none;
                     color: style.$bg-light;
-    
+
                     & li {
                         width: max-content;
                         font-size: 24px;
                         line-height: 33px;
 
-                        &:hover, &:focus {
+                        &:hover,
+                        &:focus {
                             color: style.$bg-mint;
                         }
                     }
+                }
+
+                & a.active-section {
+                    color: style.$bg-mint;
                 }
             }
         }
@@ -63,7 +68,8 @@
             display: block;
             margin: 0 auto 60px;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 text-decoration: underline;
             }
 
@@ -90,7 +96,7 @@
     }
 
     & .menu_pane.menu-active {
-       transform: translateX(0vw);
+        transform: translateX(0vw);
     }
 
     @include style.devices(mobile) {
@@ -156,10 +162,15 @@
                     font-size: 24px;
                     line-height: 33px;
 
-                    &:hover, &:focus {
+                    &:hover,
+                    &:focus {
                         color: style.$bg-mint;
                     }
                 }
+            }
+
+            & a.active-section {
+                color: style.$bg-mint;
             }
         }
 
@@ -181,7 +192,8 @@
             font-weight: 500;
             display: block;
 
-            &:hover, &:focus {
+            &:hover,
+            &:focus {
                 text-decoration: underline;
             }
 
@@ -204,7 +216,8 @@
                 font-size: 25px;
                 color: style.$bg-light;
 
-                &:hover, &:focus {
+                &:hover,
+                &:focus {
                     color: style.$bg-mint;
                 }
             }

@@ -1,9 +1,8 @@
 import React from "react";
 import * as classes from "../styles/RoadmapRowstyle.module.scss";
 
-
-const RoadmapRow = ({props}) => {
-    let {pic, num, text, text2=""} = props
+const RoadmapRow = ({ props }) => {
+    let { pic, num, text, text2 = "" } = props;
 
     return (
         <div className={classes.rowWrap}>
@@ -15,13 +14,10 @@ const RoadmapRow = ({props}) => {
             </div>
             <div>
                 <p>{text}</p>
-                {text2 
-                ?   <p className={classes.secondLine}>{text2}</p>
-                : null
-                }
+                {text2 ? <p className={classes.secondLine}>{text2}</p> : null}
             </div>
         </div>
-    )
-}
+    );
+};
 
-export default RoadmapRow
+export default RoadmapRow;

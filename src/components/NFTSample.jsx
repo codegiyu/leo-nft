@@ -4,9 +4,8 @@ import triangle from "../images/triangle.svg";
 import solana from "../images/solana.svg";
 import leopard from "../images/leopard.png";
 
-
-const NFTSample = ({props}) => {
-    let {pic = false} = props
+const NFTSample = ({ props }) => {
+    let { pic = false } = props;
 
     return (
         <div className={classes.sampleBox}>
@@ -14,12 +13,9 @@ const NFTSample = ({props}) => {
                 <img src={triangle} alt="triangle" />
             </div>
             <img src={leopard} alt="leopard" className={classes.leopard} />
-            { pic
-            ?   <img src={solana} alt="solana" className={classes.solana}/>
-            : null
-            }
+            {pic ? <img src={solana} alt="solana" className={classes.solana} /> : null}
         </div>
-    )
-}
+    );
+};
 
-export default NFTSample
+export default NFTSample;

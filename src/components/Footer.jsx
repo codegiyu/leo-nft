@@ -45,12 +45,10 @@ const Footer = () => {
                 </nav>
             </div>
             <div className={classes.footerWrap}>
-                <p className={classes.footerText}>
-                    &copy; 2023. All Rights Reserved.
-                </p>
+                <p className={classes.footerText}>&copy; 2023. All Rights Reserved.</p>
             </div>
         </footer>
-    )
-}
+    );
+};
 
-export default Footer
+export default Footer;
